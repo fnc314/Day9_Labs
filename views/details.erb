@@ -1,0 +1,25 @@
+<div class="MovieInfo">
+	<h1>
+		<%= "#{@id["Title"]}" %>
+	</h1>
+	<br>
+	<h2>
+		Release Date: <%= "#{@id["Released"]}" %> <br>
+		Director: <%= "#{@id["Director"]}" %> <br>
+		MPAA Rating: <%= "#{@id["Rated"]}" %> <br>
+	</h2>
+	<h3>
+		Runtime: <%= "#{@id["Runtime"]}" %> <br>
+		Genre: <%= "#{@id["Genre"]}" %> <br>
+	</h3>
+	<h4>
+		Starring: <br> <%= "#{@id["Actors"]}" %>
+	</h4>
+	<p>
+		Plot Synopsis: <br> <%= "#{@id["Plot"]}" %>
+	</p>
+</div>
+
+<div class="Poster">
+	<img src= <%= "#{@id["Poster"]}" %> > </img>
+</div>
