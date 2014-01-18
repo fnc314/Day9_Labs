@@ -16,7 +16,14 @@ post '/result' do
 end
 
 get '/details/:imdb' do |imdb_id|
-  request = Typhoeus.get("www.omdbapi.com", :params => {:i => imdb_id})
+  request = Typhoeus.get("www.omdbapi.com", :params => {:i => imdb_id, :plot => "full", :tomatoes => "true"})
   @id = JSON.parse(request.body)
+  puts @id
+  if @id["Poster"] == "N/A"
+  	@id["Poster"] = "http://1.bp.blogspot.com/-QVzzEVHIUxA/UDDNCSGQEqI/AAAAAAAAB0U/4iWJTRhH_AQ/s640/20-no-energy-robin-hegarty-ireland-thumb.jpg"
+  else
+  	@id
+  end
+	puts @id
   erb :details
 end
